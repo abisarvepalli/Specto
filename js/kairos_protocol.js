@@ -1,7 +1,7 @@
 const vappid = "ae47a948", 
     vappkey = "6a9aa59710e71363632f66eac6ce5fa1";
 
-const default_number = "4231567890";
+const default_number = "0000000000";
 
 // Kairos Protocol
 function enrollId(base64_string, number) {
@@ -22,6 +22,9 @@ function enrollId(base64_string, number) {
     hours = hours % 12;
     hours = hours ? hours : 12; // the hour '0' should be '12'
     minutes = minutes < 10 ? '0'+minutes : minutes; 
+    
+    console.log(date.getYear());
+
     var dateString = (date.getMonth()+1)+"l"+date.getDate()+"l"+date.getYear()+"j"+hours+"oo"+minutes+"oo"+date.getMilliseconds()+ampm;
 
     var params = "{\"image\":\"" + base64_string + "\",\"subject_id\":\"" + dateString + "\",\"gallery_name\":\""+number+"\"}";
@@ -46,8 +49,6 @@ function verifyId(base64_string, number) {
     /*CHANGE TO CONNECT TO MCONNECT DB*/
     if (number == undefined) {
         number = default_number;
-    } else {
-        alert(number);
     }
     
     var request = new XMLHttpRequest();
@@ -81,8 +82,9 @@ function verifyId(base64_string, number) {
                         document.getElementById("camera_button").style.display = '';
                         document.getElementById("camera_button").className = "center";                        
 
-                        alert("Verified your identity with " + confidence + "% confidence");                        
-                        if (confidence < 90) {
+                        alert("Verified your identity with " + confidence + "% confidence.");
+                        alert("Have a Good Day :).")                        
+                        if (confidence < 95) {
                             enrollId(base64_string, number);
                         }                        
                         return true;
@@ -121,6 +123,8 @@ function verifyId(base64_string, number) {
                 alert("Please try again, making sure your face is clear of any obstructions");
 
                 document.getElementById("camera_button").src = "img/camera_icon.png";
+
+                return false;
             }
         }
     }
