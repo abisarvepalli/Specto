@@ -1,0 +1,39 @@
+<DOCTYPE HTML>
+    <head>
+        <title>Specto</title>        
+        <meta charset="utf-8">   
+
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+
+        <script src="https://use.fontawesome.com/e2e225412b.js"></script>
+        <script src="js/jquery.creditCardValidator.js"></script>
+        <script type="text/javascript" src="js/kairos_protocol.js"></script>            
+        <script src="js/script.js"></script>
+    </head>                
+    
+    <body>
+        <div class="center" id="client_version" style="color: white">Specto Web Client</div>
+        <br>    
+
+        <div>            
+            <input id="number_field" type="text" class="center" placeholder="Credit Card Number" style="border-style:solid; border-color:#000000; border-width: .5px; background-color:white; width:50%">
+
+            <!-- Supported Cards -->
+            <div id="icons" class="fa fa-2x" style="color: white; display: inline; float: right">                
+                <i class="fa fa-cc-amex"></i>
+                <i class="fa fa-cc-visa"></i>
+                <i class="fa fa-cc-mastercard"></i>
+                <i class="fa fa-cc-discover"></i>
+            </div>
+        </div>
+
+        <div class="center" id="camera_frame">
+            <video autoplay="true" id="video_element"></video>
+        </div>
+        
+        <div class="center" id="button_frame">
+            <i id="spinner" class="center fa fa-spinner fa-pulse fa-5x" style="color:white; display:none"></i>
+            <input class="center fa fa-spinner" type="image" src="img/camera_icon.png" value="" id="camera_button">
+        </div>
+    </body>
+</DOCTYPE> 

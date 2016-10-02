@@ -1,0 +1,57 @@
+body {
+    /*background: linear-gradient(top bottom, #2980b9,#2c3e50);*/
+    background: -webkit-gradient(linear, left top, left bottom, from(#2980b9), to(#2c3e50)) fixed;
+    font-size: 9pt;
+    font-family: Verdana, Helvetica, Sans-Serif;
+    margin: 0;
+    padding: 0;
+    color: #696969;
+    
+    margin: auto;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#client_version {
+    text-align: center;
+}
+
+#camera_frame {  
+    border-style: solid;
+    
+    margin-top: 2.5%;
+    width: 100%;    
+}
+
+#video_element {     
+    width: 100%;
+    
+    transform: rotateY(180deg);
+    -webkit-transform:rotateY(180deg); /* Safari and Chrome */
+    -moz-transform:rotateY(180deg); /* Firefox */
+}
+#button_frame {
+    position: relative;
+    
+    margin-top: 2.5%;
+    text-align: center;
+}
+#camera_button {
+    position: relative;
+    
+    width: 75px;
+    height: 75px;        
+     
+    background-size: 100%;  
+    
+    border: none;
+}
+
+
+/*CLASSES*/
+.center {
+    margin: auto;
+}
